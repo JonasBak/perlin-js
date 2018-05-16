@@ -40,10 +40,10 @@ demo2d();
 const demo3d = () => {
   const c = document.querySelector("#canvas-3d").getContext("2d");
 
-  const width = 3;
-  const height = 3;
-  const depth = 10;
-  const steps = 20;
+  const width = 6;
+  const height = 6;
+  const depth = 5;
+  const steps = 10;
   const size = 10;
   const noise = perlin([width, height, depth], steps);
 
@@ -62,7 +62,7 @@ const demo3d = () => {
       );
     }
     d = (d + 1) % (depth * steps);
-  }, 100);
+  }, 50);
 };
 
 demo3d();

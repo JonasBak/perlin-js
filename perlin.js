@@ -23,7 +23,7 @@ const createVec = n => {
 
 const generateGrid = dims => {
   const grid = [];
-  const length = dims.map(d => d + 1).reduce((a, b) => a * b, 1);
+  const length = dims.reduce((a, b) => a * b, 1);
   while (grid.length < length) {
     grid.push(createVec(dims.length));
   }
@@ -56,7 +56,7 @@ const perlin = (dims, steps) => {
     const is = dims.map(() => 0);
     while (weights.length < 2 ** dims.length) {
       const point = is.map((a, i) => (a === 0 ? c0[i] : c1[i]));
-      const index = pointToIndex(point, dims.map(d => 2));
+      const index = pointToIndex(point.map((p, i) => p % dims[i]), dims);
       weights.push(posDotVec(diff(posGlobal, point), grid[index]));
 
       is[0]++;
