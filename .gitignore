@@ -1,4 +1,2 @@
-examples/2d/node_modules
-examples/2d/dist
-examples/webgl/node_modules
-examples/webgl/dist
+examples
+perlin.js
