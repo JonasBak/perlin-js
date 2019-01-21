@@ -32,7 +32,7 @@ const generateGrid = dims => {
 
 const pointToIndex = (grid, dims) => {
   const wdims = dims.slice().reverse();
-  for (i in wdims) wdims[i] = i > 0 ? wdims[i] * wdims[i - 1] : wdims[i];
+  for (let i in wdims) wdims[i] = i > 0 ? wdims[i] * wdims[i - 1] : wdims[i];
   return grid
     .map((g, i) => (i > 0 ? g * wdims[i - 1] : g))
     .reduce((a, b) => a + b, 0);
@@ -90,3 +90,5 @@ const perlin = (dims, steps) => {
 
   return noise;
 };
+
+export default perlin;

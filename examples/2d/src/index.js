@@ -1,3 +1,5 @@
+import perlin from "../../../perlin.js";
+
 const demo1d = () => {
   const c = document.querySelector("#canvas-1d").getContext("2d");
 
@@ -6,7 +8,7 @@ const demo1d = () => {
   const size = 5;
   const noise = perlin([width], steps);
   c.moveTo(0, noise[0] * 100 + 100);
-  for (i in noise) {
+  for (let i in noise) {
     c.lineTo(i * size, noise[i] * 100 + 100);
   }
   c.stroke();
@@ -22,7 +24,7 @@ const demo2d = () => {
   const steps = 20;
   const size = 10;
   const noise = perlin([width, height], steps);
-  for (i in noise) {
+  for (let i in noise) {
     const f = Math.floor((noise[i] + 1) / 2 * 255);
     c.fillStyle = `rgba(${f}, ${f}, ${f}, 1)`;
 

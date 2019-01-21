@@ -1,3 +1,6 @@
+import perlin from "../../../perlin.js";
+import {Shader, Scene, VertexArray} from "webglfw";
+
 function main() {
   const canvas = document.querySelector("#glcanvas");
 
